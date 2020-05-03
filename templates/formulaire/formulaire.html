@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+	<body>
+
+
+		<form action="" method="post">
+			<input type="text" name="msg1" value="Votre nom" />
+			<textarea name="msg2">Votre message ici.</textarea>
+			<input type="submit" value="Envoyer POST" />
+		</form>
+		<p id="modifParPost">Modification du champ par post : {{ votreNom }} {{votreMessage}}</p> 
+		
+		<br>
+		<br>
+		<br>
+
+
+
+
+
+		<form action="" method="post">
+			<input type="text" name="msgParAjax" id="msgParAjax" value="Votre nom" />
+			<textarea name="msg2ParAjax" id="msg2ParAjax">Votre message ici.</textarea>
+			<input type="submit" name="submitParAJax" id="submitParAJax" value="Envoyer PAR AJAX" />
+			<textarea name="resultatParAjax" id="resultatParAjax" value=""> </textarea> 
+		</form>
+		<p id="modifAjax">Modification du champ par ajax : </p> 
+		
+		<br>
+		<br>
+		<br>
+
+
+
+		<form action="" enctype="multipart/form-data" method="post">
+			<input type="file" name="fichier" />    
+			<input type="submit" value="Envoyer Fichier" />
+		</form>
+
+		<br>
+
+		<form action="" method="get">
+			<input type="text" name="msgGet" value="Votre nom en get" />
+			<input type="submit" value="Envoyer GET" />
+		</form>
+
+
+		<script type="text/javascript">
+			console.log("La page vient detre rechargé (script javascript dans le html)");
+		</script>
+		<script src="{{ url_for('static', filename='formulaire.js') }}" type="text/javascript"></script>
+	
+
+	</body>
+</html>
